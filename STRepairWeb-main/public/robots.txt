@@ -1,0 +1,8 @@
+# Snap Tech Repair - robots.txt
+# https://snaptechrepair.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://snaptechrepair.com/sitemap.xml

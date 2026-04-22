@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install)",
+      "Bash(npm test)",
+      "Bash(git *)",
+      "Bash(tree:*)",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(gemini extensions:*)",
+      "Bash(git clone:*)",
+      "Bash(setx:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Edit",
+      "Read",
+      "Grep",
+      "Glob",
+      "mcp__playwright__browser_navigate"
+    ]
+  },
+  "defaultMode": "acceptEdits"
+}
