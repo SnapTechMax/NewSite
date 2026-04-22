@@ -45,20 +45,18 @@ export function ContactForm({ className }: ContactFormProps) {
     setSubmitStatus("idle");
 
     try {
-      // Placeholder for n8n webhook integration
-      // In production, replace with actual webhook URL
-      const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL || "/api/contact";
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          source: "Contact page form",
+        }),
+      });
 
-      // Simulate form submission for demo
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // In production, uncomment this:
-      // const response = await fetch(webhookUrl, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
-      // if (!response.ok) throw new Error("Submission failed");
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });

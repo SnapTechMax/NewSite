@@ -11,6 +11,7 @@ import { ServiceSchema, FAQSchema } from "@/components/schema";
 import { Service } from "@/types";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
+import { locations } from "@/data/locations";
 
 interface ServicePageTemplateProps {
   service: Service;
@@ -570,6 +571,35 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               </motion.div>
             ))}
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Service in each location - deep linking */}
+      <section className="py-16 lg:py-20 bg-gray-50 border-t border-gray-100">
+        <Container>
+          <div className="mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">
+              Service Areas
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900">
+              {service.name} across the San Gabriel Valley.
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl">
+              We work with customers across the valley. Click your city for location-specific details.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            {locations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/services/${service.slug}/${loc.slug}`}
+                className="block p-4 bg-white rounded-lg border border-gray-100 hover:border-primary hover:shadow-md transition-all text-center"
+              >
+                <p className="font-semibold text-gray-900">{loc.name}</p>
+                <p className="text-xs text-gray-500 mt-1">{loc.state}</p>
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
 

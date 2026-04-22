@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceGrid } from "@/components/sections/ServiceGrid";
@@ -7,6 +8,7 @@ import { Container, Button, Card, CardContent } from "@/components/ui";
 import { BreadcrumbSchema } from "@/components/schema";
 import { Location } from "@/types";
 import { company } from "@/data/company";
+import { services } from "@/data/services";
 
 interface LocationPageTemplateProps {
   location: Location;
@@ -387,6 +389,37 @@ export function LocationPageTemplate({ location }: LocationPageTemplateProps) {
           </Container>
         </section>
       )}
+
+      {/* Services in this location - deep linking */}
+      <section className="py-16 lg:py-20 bg-gray-50 border-t border-gray-100">
+        <Container>
+          <div className="mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">
+              Services in {location.name}
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900">
+              What we handle for {location.name} customers.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((svc) => (
+              <Link
+                key={svc.slug}
+                href={`/services/${svc.slug}/${location.slug}`}
+                className="block p-6 bg-white rounded-xl border border-gray-100 hover:border-primary hover:shadow-md transition-all"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                  {svc.name}
+                </p>
+                <p className="font-serif text-lg font-bold text-gray-900 mb-1">
+                  {svc.name} in {location.name}
+                </p>
+                <p className="text-sm text-gray-500">Read more &rarr;</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* CTA */}
       <CTASection

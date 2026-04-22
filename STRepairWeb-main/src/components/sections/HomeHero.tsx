@@ -22,11 +22,35 @@ export function HomeHero({
     phone: "",
     issue: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          source: "Homepage quote form",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", phone: "", issue: "" });
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -256,11 +280,24 @@ export function HomeHero({
                   />
                 </div>
 
+                {submitStatus === "error" && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-red-700 text-sm">
+                    Something went wrong. Please try again or call us directly.
+                  </div>
+                )}
+
+                {submitStatus === "success" && (
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-green-700 text-sm">
+                    Got it. We&apos;ll be in touch shortly.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-6 rounded-lg transition-colors shadow-lg shadow-accent/25"
+                  disabled={isSubmitting}
+                  className="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-6 rounded-lg transition-colors shadow-lg shadow-accent/25 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Get My Free Quote
+                  {isSubmitting ? "Sending..." : "Get My Free Quote"}
                 </button>
               </form>
 
