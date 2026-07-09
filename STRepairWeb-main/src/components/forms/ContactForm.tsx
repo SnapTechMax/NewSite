@@ -4,6 +4,12 @@ import { useState } from "react";
 import { Button, Input, Textarea, Select } from "@/components/ui";
 import { services } from "@/data/services";
 
+declare global {
+  interface Window {
+    uetq?: unknown[];
+  }
+}
+
 interface FormData {
   name: string;
   email: string;
@@ -59,6 +65,13 @@ export function ContactForm({ className }: ContactFormProps) {
       }
 
       setSubmitStatus("success");
+      // Microsoft UET conversion event. The goal matches on EventAction === "other",
+      // which is the second positional argument here — not a field in the object.
+      window.uetq = window.uetq || [];
+      window.uetq.push("event", "other", {
+        event_category: "contact",
+        event_label: "Contact page form",
+      });
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
     } catch {
       setSubmitStatus("error");

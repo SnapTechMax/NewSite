@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import { LocalBusinessSchema } from "@/components/schema";
+import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from "next/script";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -27,8 +29,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://snaptechrepair.com"),
   title: {
-    default: "IT Services & Computer Repair in San Dimas, CA | Snap Tech Repair",
-    template: "%s | Snap Tech Repair",
+    default: "IT Services & Computer Repair in San Dimas, CA | SnapTech Repair",
+    template: "%s | SnapTech Repair",
   },
   description:
     "Professional IT services, computer repair, and tech support for small businesses in the San Gabriel Valley. Same-day service available. Call (626) 838-2862.",
@@ -42,12 +44,12 @@ export const metadata: Metadata = {
     "malware removal",
     "device repair",
   ],
-  authors: [{ name: "Snap Tech Repair" }],
+  authors: [{ name: "SnapTech Repair" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Snap Tech Repair",
-    title: "Snap Tech Repair | IT Services & Computer Repair",
+    siteName: "SnapTech Repair",
+    title: "SnapTech Repair | IT Services & Computer Repair",
     description:
       "Professional IT services and computer repair for small businesses in the San Gabriel Valley.",
     images: [
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Snap Tech Repair - IT Services & Computer Repair in San Dimas, CA",
+        alt: "SnapTech Repair - IT Services & Computer Repair in San Dimas, CA",
       },
     ],
   },
@@ -80,6 +82,11 @@ export default function RootLayout({
       >
         <LocalBusinessSchema />
         {children}
+        <GoogleAnalytics gaId="G-652C5HBENF" />
+        {/* Microsoft Universal Event Tracking (UET) base tag */}
+        <Script id="uet-base" strategy="afterInteractive">
+          {`(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"97233137", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");`}
+        </Script>
       </body>
     </html>
   );
