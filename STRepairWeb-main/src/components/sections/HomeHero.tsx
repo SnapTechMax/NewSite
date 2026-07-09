@@ -4,6 +4,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Container, Button } from "@/components/ui";
 
+declare global {
+  interface Window {
+    uetq?: unknown[];
+  }
+}
+
 interface HomeHeroProps {
   title: string;
   subtitle?: string;
@@ -45,6 +51,13 @@ export function HomeHero({
       }
 
       setSubmitStatus("success");
+      // Microsoft UET conversion event. The goal matches on EventAction === "other",
+      // which is the second positional argument here — not a field in the object.
+      window.uetq = window.uetq || [];
+      window.uetq.push("event", "other", {
+        event_category: "contact",
+        event_label: "Homepage quote form",
+      });
       setFormData({ name: "", email: "", phone: "", issue: "" });
     } catch {
       setSubmitStatus("error");
@@ -106,7 +119,7 @@ export function HomeHero({
                 SnapTech Repair
               </p>
               <p className="text-lg text-gray-300">
-                403 E Arrow Hwy STE 304, San Dimas, CA 91773
+                403 E Arrow Hwy Suite 306, San Dimas, CA 91773
               </p>
               <p className="text-xl md:text-2xl font-bold text-accent">
                 <a href="tel:6268382862" className="hover:text-accent-light transition-colors">
