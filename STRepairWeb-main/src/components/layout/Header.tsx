@@ -45,6 +45,11 @@ export function Header() {
                   className="text-[0.9375rem] font-medium tracking-wide text-gray-700 hover:text-primary transition-colors"
                 >
                   {item.label}
+                  {item.badge && (
+                    <span className="ml-1.5 inline-block rounded-full bg-primary px-1.5 py-0.5 align-middle text-[0.625rem] font-bold uppercase leading-none tracking-wide text-white">
+                      {item.badge}
+                    </span>
+                  )}
                   {item.children && (
                     <svg
                       className="inline-block w-4 h-4 ml-1"
@@ -129,6 +134,11 @@ export function Header() {
                   onClick={() => !item.children && setMobileMenuOpen(false)}
                 >
                   {item.label}
+                  {item.badge && (
+                    <span className="ml-1.5 inline-block rounded-full bg-primary px-1.5 py-0.5 align-middle text-[0.625rem] font-bold uppercase leading-none tracking-wide text-white">
+                      {item.badge}
+                    </span>
+                  )}
                 </Link>
                 {item.children && (
                   <div className="pl-4 flex flex-col gap-1">

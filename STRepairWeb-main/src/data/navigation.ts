@@ -20,6 +20,11 @@ export const mainNavigation: NavItem[] = [
       href: `/locations/${l.slug}`,
     })),
   },
+  {
+    label: "AI Integration",
+    href: "/ai-integration",
+    badge: "New",
+  },
 ];
 
 export const footerNavigation = {
