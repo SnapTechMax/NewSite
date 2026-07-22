@@ -14,7 +14,7 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: "The 5 Levels of AI for Small Business",
   description:
-    "Everybody says you should use AI. Nobody says what that means. The plain-English version: five levels, find yours in ten minutes, then find out what staying there is costing you. A free guide from SnapTech Repair.",
+    "If you run a small business, everybody says you should use AI — nobody says what that means for a shop like yours. The plain-English version for owners: five levels, find yours in ten minutes, then find out what staying there is costing you. A free guide from SnapTech Repair.",
   alternates: { canonical: "/ai-integration" },
   openGraph: {
     title: "The 5 Levels of AI | SnapTech Repair",
@@ -98,6 +98,9 @@ export default function AiIntegrationPage() {
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#f6be00]">
             SnapTech Repair &nbsp;&middot;&nbsp; Managed IT &nbsp;&middot;&nbsp; AI
           </p>
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.22em] text-[#8a887f]">
+            A plain-English guide for small business owners
+          </p>
 
           <h1
             className={`${display} mt-8 text-6xl font-black uppercase leading-[0.92] tracking-tight sm:text-8xl`}
@@ -108,7 +111,8 @@ export default function AiIntegrationPage() {
           </h1>
 
           <p className="mt-8 max-w-xl font-serif text-lg leading-relaxed text-[#cfccc2] sm:text-xl">
-            Everybody says you should use AI. Nobody says what that means.{" "}
+            You run a small business. Everybody says you should use AI &mdash;
+            nobody says what that actually means for a shop like yours.{" "}
             <span className="font-semibold text-[#f2efe6]">
               This is the plain English version.
             </span>{" "}
@@ -169,7 +173,8 @@ export default function AiIntegrationPage() {
 
         <div className="mt-8 max-w-2xl space-y-4 font-serif text-lg leading-relaxed">
           <p>
-            Most AI guides hand you twenty apps. The app was never the hard part.
+            Most AI guides hand a small business owner twenty apps. The app was
+            never the hard part.
           </p>
           <p>
             Here are five levels instead. Each answers one question:{" "}
@@ -211,9 +216,9 @@ export default function AiIntegrationPage() {
             The short version
           </p>
           <p className="mt-4 max-w-2xl font-serif text-lg leading-relaxed text-[#e6e3d9]">
-            Most shops are on Level 1. Almost nobody is on Level 3, the one that
-            pays. Read the guide and you know your level. Call us and you know
-            your number.
+            Most small businesses are on Level 1. Almost nobody is on Level 3, the
+            one that pays. Read the guide and you know your level. Call us and you
+            know your number.
           </p>
         </div>
       </section>
@@ -254,8 +259,8 @@ export default function AiIntegrationPage() {
           </h2>
           <p className="mt-5 max-w-xl font-serif text-lg leading-relaxed text-[#cfccc2]">
             Drop your email and we&apos;ll send the guide straight over. Find the
-            level you&apos;re really on, and what the next one up is worth to a shop
-            like yours.
+            level your small business is really on, and what the next one up is
+            worth to an owner like you.
           </p>
 
           <div className="mt-10 rounded-2xl border border-[#33332f] bg-[#232320] p-6 sm:p-8">
@@ -353,8 +358,8 @@ export default function AiIntegrationPage() {
             </h3>
             <p className="mt-3 max-w-2xl font-serif text-[15px] leading-relaxed text-[#1b1b1b]/80">
               Tell us the level you landed on. We&apos;ll tell you what we usually
-              find there, and what it costs shops like yours. Free, whether or not
-              you hire us.
+              find there, and what it costs small businesses like yours. Free,
+              whether or not you hire us.
             </p>
             <div className="mt-6 space-y-1 font-mono text-sm">
               <a href="tel:6268382862" className="block font-bold text-[#1b1b1b] hover:underline">
