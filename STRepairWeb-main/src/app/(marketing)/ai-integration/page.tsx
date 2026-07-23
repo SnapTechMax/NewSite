@@ -14,7 +14,7 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: "The 5 Levels of AI for Small Business",
   description:
-    "If you run a small business, everybody says you should use AI — nobody says what that means for a shop like yours. The plain-English version for owners: five levels, find yours in ten minutes, then find out what staying there is costing you. A free guide from SnapTech Repair.",
+    "If you run a small business, everybody says you should use AI. Nobody says what that means for a shop like yours. The plain-English version for owners: five levels, find yours in ten minutes, then find out what staying there is costing you. A free guide from SnapTech Repair.",
   alternates: { canonical: "/ai-integration" },
   openGraph: {
     title: "The 5 Levels of AI | SnapTech Repair",
@@ -73,11 +73,11 @@ const levels = [
 const inside = [
   {
     label: "The five levels",
-    text: "Each one in plain English — what it looks like on a normal Tuesday, what it gets you, and how you know you've outgrown it.",
+    text: "Each one in plain English: what it looks like on a normal Tuesday, what it gets you, and how you know you've outgrown it.",
   },
   {
     label: "The 2-minute test",
-    text: "A five-box checklist that tells you the level you're really on — not the one you wish you were on.",
+    text: "A five-box checklist that tells you the level you're really on, not the one you wish you were on.",
   },
   {
     label: "Watch-outs & apps",
@@ -111,8 +111,8 @@ export default function AiIntegrationPage() {
           </h1>
 
           <p className="mt-8 max-w-xl font-serif text-lg leading-relaxed text-[#cfccc2] sm:text-xl">
-            You run a small business. Everybody says you should use AI &mdash;
-            nobody says what that actually means for a shop like yours.{" "}
+            You run a small business. Everybody says you should use AI. Nobody
+            says what that actually means for a shop like yours.{" "}
             <span className="font-semibold text-[#f2efe6]">
               This is the plain English version.
             </span>{" "}
@@ -181,7 +181,7 @@ export default function AiIntegrationPage() {
             <span className="font-semibold">
               how much of the work happens while you are not watching?
             </span>{" "}
-            Go one level at a time — people who jump from Level 1 to Level 4 land
+            Go one level at a time. People who jump from Level 1 to Level 4 land
             on a mess and a bill.
           </p>
         </div>
@@ -280,14 +280,14 @@ export default function AiIntegrationPage() {
         <p className="mt-6 max-w-2xl font-serif text-lg leading-relaxed">
           Be honest. The question isn&apos;t &ldquo;has anyone here ever tried it
           once.&rdquo; It&apos;s &ldquo;is this how we work on a normal
-          Tuesday.&rdquo; The full five-box test is in the guide — here&apos;s the
+          Tuesday.&rdquo; The full five-box test is in the guide. Here&apos;s the
           shape of it:
         </p>
 
         <ul className="mt-10 space-y-4">
           {[
             "Someone here uses an AI chat box most days instead of searching the web.",
-            "We hand it real work — our files, our paperwork — and use what comes back.",
+            "We hand it real work, our files and our paperwork, and use what comes back.",
             "There is at least one tool running in this business that AI helped us build.",
             "There is at least one job that finishes without anybody pressing go.",
             "We give goals, not steps. We check the results.",

@@ -59,7 +59,7 @@ export function LeadMagnetForm() {
         </h3>
         <p className="mt-3 max-w-md font-serif text-[15px] leading-relaxed text-[#1b1b1b]/80">
           The 5 Levels of AI is on its way{email ? ` to ${email}` : ""}. It can take a
-          minute &mdash; if it&apos;s not there, check spam, or grab it directly below.
+          minute. If it&apos;s not there, check spam, or grab it directly below.
         </p>
         <a
           href={GUIDE_PATH}

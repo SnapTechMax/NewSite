@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
             <p style="margin:20px 0 0;font-size:13px;line-height:1.6;color:#57564f;">If the button doesn't work, paste this into your browser:<br><a href="${GUIDE_URL}" style="color:#1b1b1b;">${GUIDE_URL}</a></p>
             <hr style="border:none;border-top:1px solid #d4d1c6;margin:24px 0;">
             <p style="margin:0 0 8px;font-size:15px;line-height:1.6;"><strong>The map is free. Your step takes one call.</strong></p>
-            <p style="margin:0 0 16px;font-size:15px;line-height:1.6;">The guide tells you your level. It can't tell you which move is yours or what it's worth &mdash; that's twenty minutes with us, free whether or not you hire us.</p>
+            <p style="margin:0 0 16px;font-size:15px;line-height:1.6;">The guide tells you your level. It can't tell you which move is yours or what it's worth. That's twenty minutes with us, free whether or not you hire us.</p>
             <p style="margin:0;font-size:15px;line-height:1.7;">
               <a href="tel:6268382862" style="color:#1b1b1b;font-weight:600;">(626) 838-2862</a><br>
               <a href="mailto:max@snaptechrepair.com" style="color:#1b1b1b;">max@snaptechrepair.com</a>
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
       </div>`;
 
     const deliveryText = [
-      `The 5 Levels of AI — SnapTech Repair`,
+      `The 5 Levels of AI, from SnapTech Repair`,
       ``,
       firstName ? `Hi ${firstName},` : `Hi,`,
       ``,
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
       `Download the guide: ${GUIDE_URL}`,
       ``,
       `The map is free. Your step takes one call.`,
-      `The guide tells you your level. It can't tell you which move is yours or what it's worth — that's twenty minutes with us, free whether or not you hire us.`,
+      `The guide tells you your level. It can't tell you which move is yours or what it's worth. That's twenty minutes with us, free whether or not you hire us.`,
       ``,
       `(626) 838-2862`,
       `max@snaptechrepair.com`,
