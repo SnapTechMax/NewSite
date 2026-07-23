@@ -5,6 +5,7 @@ import { useState } from "react";
 declare global {
   interface Window {
     uetq?: unknown[];
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -41,6 +42,8 @@ export function LeadMagnetForm() {
         event_category: "lead-magnet",
         event_label: "5 Levels of AI",
       });
+      // Meta Pixel lead conversion
+      window.fbq?.("track", "Lead", { content_name: "5 Levels of AI" });
     } catch {
       setStatus("error");
     } finally {
