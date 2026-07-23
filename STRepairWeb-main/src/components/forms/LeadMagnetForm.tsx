@@ -6,6 +6,7 @@ declare global {
   interface Window {
     uetq?: unknown[];
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -49,6 +50,24 @@ export function LeadMagnetForm() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Fire analytics the moment the "Send me the guide" button is clicked.
+  // This tracks click intent on every click (even before validation), and is
+  // separate from the conversion events that fire once delivery succeeds.
+  const trackGuideClick = () => {
+    window.gtag?.("event", "send_guide_click", {
+      event_category: "lead-magnet",
+      event_label: "5 Levels of AI",
+    });
+    window.uetq = window.uetq || [];
+    window.uetq.push("event", "send_guide_click", {
+      event_category: "lead-magnet",
+      event_label: "5 Levels of AI",
+    });
+    window.fbq?.("trackCustom", "SendGuideClick", {
+      content_name: "5 Levels of AI",
+    });
   };
 
   if (status === "success") {
@@ -102,6 +121,7 @@ export function LeadMagnetForm() {
 
       <button
         type="submit"
+        onClick={trackGuideClick}
         disabled={isSubmitting}
         className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#f6be00] px-8 py-4 text-lg font-bold text-[#1b1b1b] transition-colors hover:bg-[#ffd23d] disabled:cursor-not-allowed disabled:opacity-60"
       >
