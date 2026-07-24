@@ -51,6 +51,7 @@ export interface NavItem {
   href: string;
   children?: NavItem[];
   badge?: string;
+  external?: boolean;
 }
 
 // Company Types

@@ -22,8 +22,9 @@ export const mainNavigation: NavItem[] = [
   },
   {
     label: "AI Integration",
-    href: "/ai-integration",
+    href: "https://footholdsystems.com",
     badge: "New",
+    external: true,
   },
 ];
 

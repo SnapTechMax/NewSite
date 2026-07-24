@@ -42,6 +42,8 @@ export function Header() {
               >
                 <Link
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="text-[0.9375rem] font-medium tracking-wide text-gray-700 hover:text-primary transition-colors"
                 >
                   {item.label}
@@ -130,6 +132,8 @@ export function Header() {
               <div key={item.href}>
                 <Link
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="block py-2 text-gray-700 font-medium hover:text-primary"
                   onClick={() => !item.children && setMobileMenuOpen(false)}
                 >
